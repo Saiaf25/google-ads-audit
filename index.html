@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل تدقيق Google Ads</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Baloo Bhaijaan 2', cursive;
+            background: #ffffff;
+            color: #0c0e1d;
+            line-height: 1.7;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: #0c0e1d;
+            color: #fff;
+            padding: 80px 40px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: -60px;
+            width: 200px;
+            height: 200px;
+            background: #ffc409;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            width: 160px;
+            height: 160px;
+            background: #96c7c3;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .hero h1 span {
+            color: #ffc409;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #96c7c3;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* ===== STATS BAR ===== */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 30px 40px;
+            background: #ffc409;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0c0e1d;
+        }
+
+        .stat-item .label {
+            font-size: 0.9rem;
+            color: #0c0e1d;
+            opacity: 0.8;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 30px;
+        }
+
+        /* ===== CATEGORY SECTION ===== */
+        .category-section {
+            margin-bottom: 50px;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #0c0e1d;
+        }
+
+        .category-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .category-icon.tracking { background: #cc5f73; color: #fff; }
+        .category-icon.targeting { background: #96c7c3; color: #0c0e1d; }
+        .category-icon.structure { background: #ffc409; color: #0c0e1d; }
+        .category-icon.gmc { background: #0c0e1d; color: #ffc409; }
+        .category-icon.bidding { background: #cc5f73; color: #fff; }
+        .category-icon.search { background: #96c7c3; color: #0c0e1d; }
+        .category-icon.pmax { background: #ffc409; color: #0c0e1d; }
+        .category-icon.landing { background: #0c0e1d; color: #96c7c3; }
+        .category-icon.video { background: #cc5f73; color: #fff; }
+
+        .category-header h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        /* ===== CHECKLIST CARDS ===== */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .check-card {
+            background: #fff;
+            border: 2px solid #e8e8e8;
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.25s ease;
+            position: relative;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .check-card:hover {
+            border-color: #ffc409;
+            box-shadow: 0 8px 30px rgba(255, 196, 9, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .card-num {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            width: 32px;
+            height: 32px;
+            background: #0c0e1d;
+            color: #ffc409;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .card-tag {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .tag-tracking { background: #cc5f73; color: #fff; }
+        .tag-targeting { background: #96c7c3; color: #0c0e1d; }
+        .tag-structure { background: #ffc409; color: #0c0e1d; }
+        .tag-gmc { background: #0c0e1d; color: #ffc409; }
+        .tag-bidding { background: #cc5f73; color: #fff; }
+        .tag-search { background: #96c7c3; color: #0c0e1d; }
+        .tag-pmax { background: #ffc409; color: #0c0e1d; }
+        .tag-landing { background: #0c0e1d; color: #96c7c3; }
+        .tag-video { background: #cc5f73; color: #fff; }
+
+        .check-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #0c0e1d;
+        }
+
+        .check-card p {
+            font-size: 0.92rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .card-arrow {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 14px;
+            color: #ffc409;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .card-arrow svg {
+            width: 18px;
+            height: 18px;
+            transform: scaleX(-1);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0c0e1d;
+            color: #96c7c3;
+            text-align: center;
+            padding: 40px 30px;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #ffc409;
+            text-decoration: none;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero { padding: 50px 20px 40px; }
+            .hero h1 { font-size: 2rem; }
+            .stats-bar { gap: 20px; padding: 20px; }
+            .stat-item .num { font-size: 1.5rem; }
+            .container { padding: 30px 16px; }
+            .checklist-grid { grid-template-columns: 1fr; }
+            .category-header h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+    <h1>دليل تدقيق <span>Google Ads</span></h1>
+    <p>افحص حسابك خطوة بخطوة، اكتشف أماكن الهدر، وحسّن أداء حملاتك — كل شي مشروح بالتفصيل مع خطوات عملية</p>
+</header>
+
+<!-- STATS -->
+<div class="stats-bar">
+    <div class="stat-item">
+        <div class="num">23</div>
+        <div class="label">نقطة تدقيق</div>
+    </div>
+    <div class="stat-item">
+        <div class="num">9</div>
+        <div class="label">فئة</div>
+    </div>
+    <div class="stat-item">
+        <div class="num">100%</div>
+        <div class="label">عملي وقابل للتطبيق</div>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <!-- ===== TRACKING ===== -->
+    <section class="category-section">
+        <div class="category-header">
+            <div class="category-icon tracking">📊</div>
+            <h2>Tracking — التتبّع</h2>
+        </div>
+        <div class="checklist-grid">
+            <a href="pages/01-conversion-tracking.html" class="check-card">
+                <div class="card-num">01</div>
+                <span class="card-tag tag-tracking">Tracking</span>
+                <h3>Conversion Tracking</h3>
+                <p>تأكّد إن أنظمة التتبّع ما تحسب نفس التحويل أكثر من مرّة — لأن البيانات المضاعفة تخرب كل شي.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== TARGETING ===== -->
+    <section class="category-section">
+        <div class="category-header">
+            <div class="category-icon targeting">🎯</div>
+            <h2>Targeting — الاستهداف</h2>
+        </div>
+        <div class="checklist-grid">
+            <a href="pages/02-customer-lists.html" class="check-card">
+                <div class="card-num">02</div>
+                <span class="card-tag tag-targeting">Targeting</span>
+                <h3>Customer Lists</h3>
+                <p>ارفع قوائم عملاءك واستخدمها في بناء Lookalike Audiences واستبعاد العملاء الحاليين.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/03-negative-keywords.html" class="check-card">
+                <div class="card-num">03</div>
+                <span class="card-tag tag-targeting">Targeting</span>
+                <h3>Negative Keywords</h3>
+                <p>راجع الكلمات السلبية وتأكّد إنك ما تصرف على بحث ما له علاقة بمنتجك.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== CAMPAIGN STRUCTURE ===== -->
+    <section class="category-section">
+        <div class="category-header">
+            <div class="category-icon structure">🏗️</div>
+            <h2>Campaign Structure — هيكلة الحملات</h2>
+        </div>
+        <div class="checklist-grid">
+            <a href="pages/04-brand-nonbrand-split.html" class="check-card">
+                <div class="card-num">04</div>
+                <span class="card-tag tag-structure">Structure</span>
+                <h3>Brand vs Non-Brand Split</h3>
+                <p>اكتشف كم ترافيك براند مختبئ في حملاتك العامّة ويخلّي الأرقام تبان أحسن من الواقع.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== GMC ===== -->
+    <section class="category-section">
+        <div class="category-header">
+            <div class="category-icon gmc">🛒</div>
+            <h2>Google Merchant Center</h2>
+        </div>
+        <div class="checklist-grid">
+            <a href="pages/05-shipping-settings.html" class="check-card">
+                <div class="card-num">05</div>
+                <span class="card-tag tag-gmc">GMC</span>
+                <h3>Shipping Settings</h3>
+                <p>تأكّد إن سرعات الشحن في GMC تطابق الواقع — لأن Google يستخدمها في ترتيب إعلاناتك.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/06-gmc-promotions.html" class="check-card">
+                <div class="card-num">06</div>
+                <span class="card-tag tag-gmc">GMC</span>
+                <h3>GMC Promotions</h3>
+                <p>فعّل عروضك وخصوماتك في Merchant Center عشان تظهر كـ Promotion Links على Shopping Ads.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/07-product-feed-titles.html" class="check-card">
+                <div class="card-num">07</div>
+                <span class="card-tag tag-gmc">GMC</span>
+                <h3>Product Feed Titles</h3>
+                <p>حط الكلمات المفتاحية المهمة في بداية عنوان المنتج — لأن الباقي يتقطع ولا أحد يشوفه.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/08-store-quality.html" class="check-card">
+                <div class="card-num">08</div>
+                <span class="card-tag tag-gmc">GMC</span>
+                <h3>Store Quality Overview</h3>
+                <p>راجع Diagnostics و Store Quality عشان تلقى المنتجات المرفوضة والمشاكل اللي لازم تتصلح.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/09-product-ratings.html" class="check-card">
+                <div class="card-num">09</div>
+                <span class="card-tag tag-gmc">GMC</span>
+                <h3>Product Ratings</h3>
+                <p>تأكّد إن تقييمات المنتجات تظهر كنجوم على Shopping Ads — ترفع الثقة والـ CTR بشكل كبير.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== BIDDING / BUDGET ===== -->
+    <section class="category-section">
+        <div class="category-header">
+            <div class="category-icon bidding">💰</div>
+            <h2>Bidding & Budget — المزايدة والميزانية</h2>
+        </div>
+        <div class="checklist-grid">
+            <a href="pages/10-shopping-structure.html" class="check-card">
+                <div class="card-num">10</div>
+                <span class="card-tag tag-bidding">Shopping</span>
+                <h3>Shopping Campaign Structure</h3>
+                <p>كل حملة تحتاج 30-50+ Conversion شهرياً عشان Smart Bidding يشتغل — لو البيانات مبعثرة، ادمج.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/11-brand-bidding.html" class="check-card">
+                <div class="card-num">11</div>
+                <span class="card-tag tag-bidding">Bidding</span>
+                <h3>Brand Bidding Strategy</h3>
+                <p>لا تترك Google يستخدم Smart Bidding على كلمات البراند بدون حد — ممكن يدفع CPC أعلى من اللازم.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/12-bidding-targets.html" class="check-card">
+                <div class="card-num">12</div>
+                <span class="card-tag tag-bidding">Bidding</span>
+                <h3>Campaign Bidding Targets</h3>
+                <p>Target ROAS عالي جداً يقتل الحملة، وواطي جداً يحرق الميزانية — لازم يكون متوازن.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/13-nonbrand-in-brand.html" class="check-card">
+                <div class="card-num">13</div>
+                <span class="card-tag tag-bidding">Bidding</span>
+                <h3>Non-Brand Terms in Brand</h3>
+                <p>كلمات عامّة في حملة البراند = تدفع سعر براند على كلمات عادية وتخرب البيانات.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== SEARCH ===== -->
+    <section class="category-section">
+        <div class="category-header">
+            <div class="category-icon search">🔍</div>
+            <h2>Search — حملات البحث</h2>
+        </div>
+        <div class="checklist-grid">
+            <a href="pages/14-nonbrand-bidding.html" class="check-card">
+                <div class="card-num">14</div>
+                <span class="card-tag tag-search">Search</span>
+                <h3>Non-Brand Bidding Strategy</h3>
+                <p>طابق استراتيجية المزايدة مع حجم التحويلات — لا تبدأ بـ Target ROAS بدون بيانات كافية.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/15-search-expansion.html" class="check-card">
+                <div class="card-num">15</div>
+                <span class="card-tag tag-search">Search</span>
+                <h3>Search Terms Expansion</h3>
+                <p>نقّب في Search Terms Report عن كلمات تحوّل بس ما تستهدفها — هذي فرص نمو جاهزة.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/16-ad-copy.html" class="check-card">
+                <div class="card-num">16</div>
+                <span class="card-tag tag-search">Search</span>
+                <h3>Ad Copy Performance</h3>
+                <p>راجع CTR و Ad Strength وجدّد الإعلانات الضعيفة — إعلان بـ CTR واطي يرفع تكلفتك.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/17-brand-match-types.html" class="check-card">
+                <div class="card-num">17</div>
+                <span class="card-tag tag-search">Search</span>
+                <h3>Brand Match Types</h3>
+                <p>كلمات البراند لازم Exact أو Phrase فقط — Broad Match يفقدك التحكّم بالكامل.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/18-brand-ad-quality.html" class="check-card">
+                <div class="card-num">18</div>
+                <span class="card-tag tag-search">Search</span>
+                <h3>Brand Ad Copy Quality</h3>
+                <p>إعلانات البراند لازم تكون متّسقة، تبرز USPs، وتعكس عروضك الحالية.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== PERFORMANCE MAX ===== -->
+    <section class="category-section">
+        <div class="category-header">
+            <div class="category-icon pmax">⚡</div>
+            <h2>Performance Max</h2>
+        </div>
+        <div class="checklist-grid">
+            <a href="pages/19-pmax-signals.html" class="check-card">
+                <div class="card-num">19</div>
+                <span class="card-tag tag-pmax">PMax</span>
+                <h3>Performance Max Signals</h3>
+                <p>بدون Search Themes و Customer Lists في الـ Signals، أنت تترك Google يخمّن بدون توجيه.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== LANDING PAGE ===== -->
+    <section class="category-section">
+        <div class="category-header">
+            <div class="category-icon landing">📄</div>
+            <h2>Landing Pages — صفحات الهبوط</h2>
+        </div>
+        <div class="checklist-grid">
+            <a href="pages/20-landing-page-setup.html" class="check-card">
+                <div class="card-num">20</div>
+                <span class="card-tag tag-landing">Landing Page</span>
+                <h3>Landing Page Setup</h3>
+                <p>Shopping → صفحة منتج. Search → صفحة تعليمية أو Collection. لا توصّل الكل للـ Homepage.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/21-landing-page-optimization.html" class="check-card">
+                <div class="card-num">21</div>
+                <span class="card-tag tag-landing">Landing Page</span>
+                <h3>Landing Page Optimization</h3>
+                <p>لو الإعلان يوعد بخصم 30% والصفحة ما تذكره — الزائر يطلع وما يرجع.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== YOUTUBE / DEMAND GEN ===== -->
+    <section class="category-section">
+        <div class="category-header">
+            <div class="category-icon video">🎬</div>
+            <h2>YouTube & Demand Gen</h2>
+        </div>
+        <div class="checklist-grid">
+            <a href="pages/22-demand-gen-performance.html" class="check-card">
+                <div class="card-num">22</div>
+                <span class="card-tag tag-video">Demand Gen</span>
+                <h3>Video Performance by Format</h3>
+                <p>افصل الأداء حسب Network (Shorts, In-Stream, Gmail...) عشان تعرف وين تركّز ميزانيتك.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+            <a href="pages/23-top-of-funnel.html" class="check-card">
+                <div class="card-num">23</div>
+                <span class="card-tag tag-video">Demand Gen</span>
+                <h3>Top-of-Funnel Campaigns</h3>
+                <p>لو كل حملاتك تستهدف جمهور جاهز — عندك فجوة. لازم توصل لناس جدد عشان تنمو.</p>
+                <div class="card-arrow">
+                    اقرأ التفاصيل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>دليل تدقيق Google Ads — مبني على منهجية عملية مجرّبة</p>
+    <p style="margin-top: 12px; font-size: 0.85rem; opacity: 0.8;">مبني على <a href="https://rhetorical-garage-a1e.notion.site/Google-Ads-Audit-Checklist-28da60cf8ed88061b943c03f3ca5a6d9" target="_blank" rel="noopener">Google Ads Audit Checklist</a> بواسطة Jackson Blackledge</p>
+</footer>
+
+</body>
+</html>

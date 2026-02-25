@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Bidding Targets — دليل تدقيق Google Ads</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Baloo Bhaijaan 2', cursive; background: #fff; color: #0c0e1d; line-height: 1.8; }
+
+        .top-bar { background: #0c0e1d; padding: 16px 30px; display: flex; align-items: center; justify-content: space-between; }
+        .top-bar a { color: #ffc409; text-decoration: none; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+        .top-bar a svg { width: 18px; height: 18px; transform: scaleX(-1); }
+        .top-bar .page-num { color: #96c7c3; font-size: 0.9rem; }
+
+        .page-hero { background: #0c0e1d; padding: 40px 30px 50px; text-align: center; }
+        .page-hero .tag { display: inline-block; padding: 4px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 14px; }
+        .page-hero h1 { color: #fff; font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; }
+        .page-hero h1 span { color: #ffc409; }
+        .page-hero p { color: #96c7c3; font-size: 1.05rem; max-width: 650px; margin: 0 auto; }
+
+        .content { max-width: 800px; margin: 0 auto; padding: 50px 30px; }
+
+        .section-block { margin-bottom: 40px; }
+        .section-block h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 14px; padding-right: 16px; border-right: 4px solid #ffc409; }
+        .section-block p { font-size: 1rem; color: #333; margin-bottom: 12px; }
+
+        .steps-list { list-style: none; padding: 0; }
+        .steps-list li { background: #f8f9fa; border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; }
+        .steps-list li::before { content: '✓'; background: #96c7c3; color: #0c0e1d; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; font-size: 0.85rem; }
+
+        .tip-box { background: #ffc409; border-radius: 12px; padding: 20px 24px; margin-top: 30px; }
+        .tip-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #0c0e1d; }
+        .tip-box p { font-size: 0.95rem; color: #0c0e1d; }
+
+        .warning-box { background: #cc5f73; color: #fff; border-radius: 12px; padding: 20px 24px; margin-top: 16px; }
+        .warning-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .warning-box p { font-size: 0.95rem; }
+
+        .nav-footer { display: flex; justify-content: space-between; padding: 30px; border-top: 2px solid #e8e8e8; margin-top: 40px; flex-wrap: wrap; gap: 16px; }
+        .nav-footer a { color: #0c0e1d; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 6px; padding: 10px 20px; border: 2px solid #e8e8e8; border-radius: 10px; transition: all 0.2s; }
+        .nav-footer a:hover { border-color: #ffc409; background: #ffc409; }
+        .nav-footer a svg { width: 16px; height: 16px; }
+
+        @media (max-width: 768px) {
+            .page-hero h1 { font-size: 1.7rem; }
+            .content { padding: 30px 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="../index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+            الرجوع للقائمة
+        </a>
+        <span class="page-num">12 من 23</span>
+    </div>
+
+    <div class="page-hero">
+        <span class="tag" style="background: #cc5f73; color: #fff;">Bidding</span>
+        <h1><span>Campaign Bidding</span> Targets</h1>
+        <p>Target ROAS لازم يكون متوازن — لا عالي زيادة ولا واطي</p>
+    </div>
+
+    <div class="content">
+        <div class="section-block">
+            <h2>وش تسوي</h2>
+            <p>راجع الـ Target ROAS أو Target CPA لكل حملة وتأكّد إنها منطقية ومبنية على بيانات حقيقية.</p>
+        </div>
+
+        <div class="section-block">
+            <h2>ليش مهم</h2>
+            <p>Target عالي جداً يخلّي Google يقلل الصرف بشكل كبير ويضيّع فرص مبيعات. Target واطي جداً يخلّيه يصرف بدون حساب والعائد ما يبرر التكلفة.</p>
+        </div>
+
+        <div class="section-block">
+            <h2>كيف تفحصها</h2>
+            <ul class="steps-list">
+                <li>قارن الـ Target مع الأداء الفعلي لآخر 30-60 يوم</li>
+                <li>حملات Brand طبيعي يكون Target ROAS أعلى من Non-Brand</li>
+                <li>عدّل بالتدريج — 10-15% كل مرة</li>
+                <li>لا تسوي تغييرات جذرية مرة وحدة</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h3>💡 نصيحة</h3>
+            <p>القاعدة: شوف الـ ROAS الفعلي لآخر 30 يوم، وحط Target قريب منه — ثم عدّل بالتدريج حسب أهدافك</p>
+        </div>
+    </div>
+
+    <div class="nav-footer">
+        <a href="11-brand-bidding.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            السابق: Brand Bidding
+        </a>
+        <a href="13-search-structure.html">
+            التالي: Search Structure
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+</body>
+</html>
